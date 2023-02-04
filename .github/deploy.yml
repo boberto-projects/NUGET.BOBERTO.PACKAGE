@@ -1,0 +1,37 @@
+name: Deploy Nuget
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    env:
+      PROJECT_PATH: ./NUGET.BOBERTO.PACKAGE/NUGET.BOBERTO.PACKAGE.csproj
+      PROJECT_PATH_TEST: ./Tests/NUGET.BOBERTO.PACKAGE.TESTS.csproj
+      SOLUTION: ./NUGET.BOBERTO.CI.sln
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "7.0.x"
+          include-prerelease: true
+
+      - name: Compile solution
+        run: dotnet build ${{ env.SOLUTION }} --configuration Release
+
+      - name: Execute tests
+        run: dotnet test ${{ env.PROJECT_PATH_TEST }}  --verbosity minimal
+
+      - name: Pack with dotnet
+        run: dotnet pack ${{ env.PROJECT_PATH }} --output nuget-packages --configuration Release
+
+      - name: Push with dotnet
+        run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
