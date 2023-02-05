@@ -3,18 +3,18 @@ using System;
 
 namespace NUGET.BOBERTO.PACKAGE.Services.HealhCheck
 {
-    public class HealthCheck : IHealthCheck
+    public class BobertoHealthCheck : IBobertoHealthCheck
     {
         public DateTime StartAt { get; set; }
         public TimeSpan LastDeploy { get; set; }
         public string Environment { get; set; }
         public string ProjectName { get; set; }
-        public HealthCheck()
+        public BobertoHealthCheck()
         {
             StartAt = DateTime.Now;
             Environment = System.Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "PRODUCTION";
         }
-        public HealthCheck(string projectName)
+        public BobertoHealthCheck(string projectName)
         {
             StartAt = DateTime.Now;
             ProjectName = projectName;

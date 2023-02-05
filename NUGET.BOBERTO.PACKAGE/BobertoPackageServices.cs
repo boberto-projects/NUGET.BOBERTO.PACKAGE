@@ -2,10 +2,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using NUGET.BOBERTO.PACKAGE.Services.HealhCheck;
 using System;
-
 namespace NUGET.BOBERTO.PACKAGE
 {
-    public static class ServiceInjection
+    public static class BobertoPackageServices
     {
         public static void AddConfigurations(IServiceCollection services, string baseDirectory)
         {
@@ -19,7 +18,7 @@ namespace NUGET.BOBERTO.PACKAGE
         }
         public static void AddHealthCheck(IServiceCollection services)
         {
-            services.AddSingleton<IHealthCheck, HealthCheck>();
+            services.AddSingleton<IBobertoHealthCheck, BobertoHealthCheck>();
         }
     }
 }

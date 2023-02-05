@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NUGET.BOBERTO.PACKAGE.Services.HealhCheck
 {
-    public interface IHealthCheck
+    public interface IBobertoHealthCheck
     {
         TimeSpan GetUpTime();
         HealthCheckSerializable GetSerializableMessage();

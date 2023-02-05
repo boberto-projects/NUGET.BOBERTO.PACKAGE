@@ -3,10 +3,10 @@
     <TargetFramework>net6.0</TargetFramework>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<Title>NUGET BOBERTO PACKAGE</Title>
-	<Version>1.0.1</Version>
-	<AssemblyVersion>1.0.0.1</AssemblyVersion>
+	<Version>1.0.2</Version>
+	<AssemblyVersion>1.0.0.2</AssemblyVersion>
 	<Description>Utils for uses with BOBERTO APIS</Description>
-	<PackageReleaseNotes>1.0.0.1</PackageReleaseNotes>
+	<PackageReleaseNotes>1.0.0.2</PackageReleaseNotes>
 	<RepositoryUrl>https://github.com/boberto-projects/NUGET.BOBERTO.PACKAGE</RepositoryUrl>
 	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Authors>Roberto Paes</Authors>
