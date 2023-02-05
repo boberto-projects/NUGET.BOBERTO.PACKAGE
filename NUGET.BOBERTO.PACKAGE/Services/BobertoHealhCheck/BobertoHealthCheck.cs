@@ -28,9 +28,10 @@ namespace NUGET.BOBERTO.PACKAGE.Services.BobertoHealthCheck
         }
         public HealthCheckSerializable GetSerializableMessage()
         {
+            GetUpTime();
             return new HealthCheckSerializable()
             {
-                LastDeploy = LastDeploy,
+                LastDeploy = new TimeSpanSerializable(LastDeploy),     
                 Environment = Environment,
                 ProjectName = ProjectName,
                 StartAt = StartAt

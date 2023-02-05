@@ -9,9 +9,8 @@ namespace NUGET.BOBERTO.PACKAGE.Messages
     public class HealthCheckSerializable
     {
         public DateTime StartAt { get; set; }
-        public TimeSpan LastDeploy { get; set; }
+        public TimeSpanSerializable LastDeploy { get; set; }
         public string Environment { get; set; }
         public string ProjectName { get; set; }
-
     }
 }
