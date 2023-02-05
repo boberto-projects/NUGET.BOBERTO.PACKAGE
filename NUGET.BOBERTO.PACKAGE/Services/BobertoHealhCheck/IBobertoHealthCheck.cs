@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUGET.BOBERTO.PACKAGE.Services.HealhCheck
+namespace NUGET.BOBERTO.PACKAGE.Services.BobertoHealthCheck
 {
     public interface IBobertoHealthCheck
     {
