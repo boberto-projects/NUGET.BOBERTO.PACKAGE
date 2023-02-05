@@ -10,6 +10,7 @@
 	 <Description>Utils for uses with BOBERTO APIS</Description>
 	<PackageReleaseNotes>1.0.0.1</PackageReleaseNotes>
 	<RepositoryUrl>https://github.com/boberto-projects/NUGET.BOBERTO.PACKAGE</RepositoryUrl>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
 	 
   </PropertyGroup>
